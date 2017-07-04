@@ -6,7 +6,7 @@
 #    By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 18:25:44 by itonoli-          #+#    #+#              #
-#    Updated: 2017/07/02 22:27:51 by itonoli-         ###   ########.fr        #
+#    Updated: 2017/07/03 17:59:59 by itonoli-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,7 +100,6 @@ ft_tablen.c \
 ft_memtab.c \
 ft_power.c \
 ft_strtol.c \
-ft_swap
 
 OBJ_NAME= $(SRC_NAME:.c=.o)
 
