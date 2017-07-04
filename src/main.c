@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:17:50 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/03 17:51:22 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/03 18:10:08 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int		main(int ac, char **av)
 		return (ft_error(1));
 	if (ac != 2)
 		return (ft_error(0));
+	init(e);
 	parse(av[1], e);
 	//test parsing
 	int x = 0;
@@ -53,7 +54,6 @@ int		main(int ac, char **av)
 		x++;
 	}
 	//fin du test
-	init(e);
 	wolf(e);
 	mlx_hook(e->win, 6, (1L << 6), mouse_move, e);
 	mlx_hook(e->win, 17, (1L << 17), kill_program, e);

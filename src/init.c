@@ -6,15 +6,27 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 23:27:55 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/02 23:07:22 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/03 18:13:45 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/wolf.h"
 
 static void init_val(t_env *e) {
+	int i;
+	int j;
+
+	i = 0;
 	e->image_w = 0;
 	e->image_h = 0;
+	while (i < 20)
+	{
+		j = 0;
+		while (j < 20)
+		{
+			e->map[i][j]=(char)()
+		}
+	}
 }
 
 void		init(t_env *e)
