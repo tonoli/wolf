@@ -17,8 +17,10 @@ static void init_val(t_env *e) {
 	int j;
 
 	i = 0;
-	e->image_w = 0;
-	e->image_h = 0;
+	e->me_x = 14;
+	e->me_y = 17;
+	e->me_dirx = -1;
+	e->me_diry = 0;
 	while (i < 20)
 	{
 		j = 0;

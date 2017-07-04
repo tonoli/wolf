@@ -45,5 +45,6 @@ void	init(t_env *e);
 int		mouse_hook(int button, int x, int y, t_env *e);
 int		key_hook(int key, t_env *env);
 int		mouse_move(int x, int y, t_env *e);
+void	parse(char *path, t_env *e);
 
 #endif
