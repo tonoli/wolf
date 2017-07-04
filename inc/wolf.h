@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:18:31 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/03 18:10:55 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/04 03:32:09 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,22 @@ typedef struct		s_env
 
 	int		me_x;
 	int		me_y;
-	int		me_view;
+	int		me_dirx;
+	int		me_diry;
 
 	char	**map;
+	int		mapx;
+	int		mapy;
+
+	double	planeX;
+	double	planeY;
+	int		x;
+
+	double	cameraX;
+	double	rayPosX;
+	double	rayPosY;
+	double	rayDirX;
+	double	rayDirY;
 }					t_env;
 
 int		ft_error(int i);

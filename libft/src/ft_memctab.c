@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_memctab.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/26 23:21:45 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/04 01:23:21 by itonoli-         ###   ########.fr       */
+/*   Created: 2017/07/04 02:04:13 by itonoli-          #+#    #+#             */
+/*   Updated: 2017/07/04 02:26:32 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/wolf.h"
+#include "../inc/libft.h"
 
-int		kill_program(void)
+char **ft_memctab(int lines, int col)
 {
-	exit(0);
-	return (0);
-}
+	int i;
+	int j;
+	char **tab;
 
-int		ft_error(int i)
-{
-	if (i == 0)
-		ft_puterror("Usage : ./wolf3d <map>");
-	else if (i == 1)
+	if (!(tab = malloc(sizeof(char *) * lines)))
 		ft_puterror("error: Dynamic memory allocation failed.");
-	else if (i == 2)
-		ft_puterror("error: The imput file is not valid.");
-	else if (i == 3)
-		ft_puterror("error: The map can't be read");
-	else if (i == 4)
-		ft_puterror(ft_strjoin("error:", strerror(errno)));
-	return (0);
+	i = -1;
+	while (++i < lines)
+	{
+		if (!(tab[i] = malloc(sizeof(char) * col)))
+			ft_puterror("error: Dynamic memory allocation failed.");
+		j = -1;
+		while (++j < col)
+		{
+			tab[i][j] = 0;
+		}
+		tab[i][j] = '\0';
+	}
+	tab[i]= NULL;
+	return (tab);
 }

@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:17:50 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/03 18:10:08 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/04 03:09:28 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void wolf(t_env *e)
 {
-	
+
 	(void)e;
 }
 
@@ -28,14 +28,6 @@ int		main(int ac, char **av)
 		return (ft_error(0));
 	init(e);
 	parse(av[1], e);
-	//test parsing
-	int x = 0;
-	while (e->map[x] != '\0')
-	{
-		ft_putendl(e->map[x]);
-		x++;
-	}
-	//fin du test
 	wolf(e);
 	mlx_hook(e->win, 6, (1L << 6), mouse_move, e);
 	mlx_hook(e->win, 17, (1L << 17), kill_program, e);

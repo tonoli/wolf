@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 18:55:20 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/03 16:20:25 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/04 02:07:06 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct	s_list
 long			ft_power(int valeur, int power);
 long			ft_strtol(char *str, char **endptr, int base);
 int				**ft_memtab(int lines, int col);
+char			**ft_memctab(int lines, int col);
 int				ft_tablen(char **tab);
 void			ft_puterror(char *str);
 int				ft_char_counter(char *str, char c);

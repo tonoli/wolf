@@ -6,29 +6,22 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 23:27:55 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/03 18:13:45 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/04 03:28:43 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/wolf.h"
 
 static void init_val(t_env *e) {
-	int i;
-	int j;
-
-	i = 0;
 	e->me_x = 14;
 	e->me_y = 17;
 	e->me_dirx = -1;
 	e->me_diry = 0;
-	while (i < 20)
-	{
-		j = 0;
-		while (j < 20)
-		{
-			e->map[i][j]=(char)()
-		}
-	}
+	e->mapx = 0;
+	e->mapy = 0;
+	e->planeX = 0;
+	e->planeY = 0;
+	e->x = 0;
 }
 
 void		init(t_env *e)
