@@ -6,11 +6,25 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 19:20:59 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/04 19:44:24 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/04 19:57:51 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/wolf.h"
+
+void where_draw(t_env *e)
+{
+//Calculate height of line to draw on screen
+	e->lineHeight = (int)(WIN_H / e->perpWallDist);
+
+//calculate lowest and highest pixel to fill in current stripe
+	e->draw_start = -e->lineHeight / 2 + WIN_H / 2;
+	if(e->draw_start < 0)
+		e->draw_start = 0;
+	e->draw_end = e->lineHeight / 2 + WIN_H / 2;
+	if(e->draw_end >= WIN_H)
+		e->draw_end = WIN_H - 1;
+}
 
 void draw_wall(t_env *e, int y)
 {

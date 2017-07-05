@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:18:31 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/04 19:33:48 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/04 19:55:50 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ typedef struct		s_env
 	int		hit;
 	int		side;
 
+	int		lineHeight;
 	int		draw_start;
 	int		draw_end;
 }					t_env;
