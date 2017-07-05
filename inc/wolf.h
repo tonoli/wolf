@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:18:31 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/04 03:32:09 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/04 19:33:48 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,46 @@ typedef struct		s_env
 	int		size_line;
 	int		endian;
 
-	int		me_x;
-	int		me_y;
-	int		me_dirx;
-	int		me_diry;
-
 	char	**map;
 	int		mapx;
 	int		mapy;
 
+	double	me_x;
+	double	me_y;
+	double	me_dirx;
+	double	me_diry;
+
+	double	speed;
+
 	double	planeX;
 	double	planeY;
-	int		x;
+
+	double	x;
+	double	y;
+
+	double	time;
+	double	oldTime;
 
 	double	cameraX;
 	double	rayPosX;
 	double	rayPosY;
 	double	rayDirX;
 	double	rayDirY;
+
+	double	sideDistX;
+	double	sideDistY;
+	double	deltaDistX;
+	double	deltaDistY;
+	double	perpWallDist;
+
+	int		stepX;
+	int		stepY;
+
+	int		hit;
+	int		side;
+
+	int		draw_start;
+	int		draw_end;
 }					t_env;
 
 int		ft_error(int i);

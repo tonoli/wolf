@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 22:27:43 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/06/27 00:03:37 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/04 19:34:13 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@
 # define V			9
 # define R			15
 
+# define SKY		0x4FC3F7
 # define LIGHTBLUE	0x4FC3F7
 # define WHITE		0xFFFFFF
 # define RED		0xF44336
