@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:17:50 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/04 03:09:28 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/05 23:10:12 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void wolf(t_env *e)
 {
-
-	(void)e;
+	raycast(e);
+	fill_img(e);
 }
 
 int		main(int ac, char **av)

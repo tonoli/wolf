@@ -6,7 +6,7 @@
 #    By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/26 17:44:42 by itonoli-          #+#    #+#              #
-#    Updated: 2017/07/04 03:40:13 by itonoli-         ###   ########.fr        #
+#    Updated: 2017/07/05 22:21:54 by itonoli-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ error.c \
 hooks.c \
 init.c \
 parse.c \
-raycast.c
+raycast.c \
+draw.c
 
 
 OBJ_NAME = $(SRC_NAME:.c=.o)

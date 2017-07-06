@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:18:31 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/04 19:55:50 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/05 22:21:02 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,7 @@ int		mouse_hook(int button, int x, int y, t_env *e);
 int		key_hook(int key, t_env *env);
 int		mouse_move(int x, int y, t_env *e);
 void	parse(char *path, t_env *e);
+void	raycast(t_env *e);
+void	fill_img(t_env *e);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/27 15:01:51 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/04 19:17:42 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/05 22:29:45 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void rotation (t_env *e, int key)
 	double oldPlaneX;
 	double rotSpeed;
 
-	rotSpeed = 0.4;
+	rotSpeed = 0.8;
 	if (key == LEFT)
 	{
 		oldDirX = e->me_dirx;

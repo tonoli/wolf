@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 02:00:43 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/04 03:08:52 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/05 22:19:34 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int		get_size(char *path, t_env *e)
 	return (0);
 }
 
-void get_values(char *path, t_env *e)
+static void get_values(char *path, t_env *e)
 {
 	int     fd;
 	int		x;
