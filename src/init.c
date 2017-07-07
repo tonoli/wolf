@@ -13,19 +13,19 @@
 #include "../inc/wolf.h"
 
 static void init_val(t_env *e) {
-	e->me_x = 14;
-	e->me_y = 17;
+	e->me_x = 10;
+	e->me_y = 4;
 	e->me_dirx = -1;
 	e->me_diry = 0;
 	e->mapx = 0;
 	e->mapy = 0;
 	e->planeX = 0;
-	e->planeY = 0;
+	e->planeY = 0.66;
 	e->x = 0;
 	e->time = 0;
 	e->oldTime = 0;
-	e->hit = 0;
 	e->speed = 1;
+	e->wh = 4;
 }
 
 void		init(t_env *e)

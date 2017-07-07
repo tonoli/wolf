@@ -14,27 +14,22 @@
 
 void where_draw(t_env *e)
 {
-//Calculate height of line to draw on screen
-	e->lineHeight = (int)(WIN_H / e->perpWallDist);
-
-//calculate lowest and highest pixel to fill in current stripe
-	e->draw_start = -e->lineHeight / 2 + WIN_H / 2;
-	if(e->draw_start < 0)
+	e->lineHeight = fabs(WIN_H / e->perpWallDist);
+	if((e->draw_start = -e->lineHeight / e->wh + WIN_H / 2) < 0)
 		e->draw_start = 0;
-	e->draw_end = e->lineHeight / 2 + WIN_H / 2;
-	if(e->draw_end >= WIN_H)
+	if((e->draw_end = e->lineHeight / 2 + WIN_H / 2) >= WIN_H)
 		e->draw_end = WIN_H - 1;
 }
 
 void draw_wall(t_env *e, int y)
 {
-	if (e->side == 0 && e->rayDirX < 0)
+	if (e->side == 0 && e->rayDirX >= 0)
 		mlx_put_pixel(e->img, e->x, y, RED);
-	else if (e->side == 0 && e->rayDirX >= 0)
+	else if (e->side == 0 && e->rayDirX < 0)
 		mlx_put_pixel(e->img, e->x, y, GREY);
-	else if (e->side == 1 && e->rayDirY < 0)
+	else if (e->side == 1 && e->rayDirY >= 0)
 		mlx_put_pixel(e->img, e->x, y, ORANGE);
-	else if (e->side == 1 && e->rayDirX >= 0)
+	else
 		mlx_put_pixel(e->img, e->x, y, GREEN);
 }
 
@@ -48,7 +43,10 @@ void draw_lines(t_env *e)
 		if (y < e->draw_start)
 			mlx_put_pixel(e->img, e->x, y, SKY);
 		else if (e->draw_start <= y && y <= e->draw_end)
-			draw_wall(e, y);
+		{
+			if (e->hit == 1)
+				draw_wall(e, y);
+		}
 		else if (y > e->draw_end)
 			mlx_put_pixel(e->img, e->x, y, BROWN);
 	}

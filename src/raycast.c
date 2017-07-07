@@ -15,7 +15,9 @@
 static void compute(t_env *e)
 {
 	//calculate ray position and direction
-	e->cameraX = 2 * e->x / (double)WIN_W - 1; //x-coordinate in camera space
+	e->cameraX = 2 * e->x / (double)WIN_W - 1;
+	e->side = 0;
+	e->side = 0;
 	e->rayPosX = e->me_x;
 	e->rayPosY = e->me_y;
 	e->rayDirX = e->me_dirx + e->planeX * e->cameraX;
@@ -23,8 +25,8 @@ static void compute(t_env *e)
 	e->mapx = (int)e->rayPosX;
 	e->mapy = (int)e->rayPosY;
 	e->perpWallDist = 0.9;
-	e->deltaDistX = sqrt(1 + (e->rayDirY * e->rayDirY) / (e->rayDirX * e->rayDirX));
-	e->deltaDistY = sqrt(1 + (e->rayDirX * e->rayDirX) / (e->rayDirY * e->rayDirY));
+	e->deltaDistX = sqrt(1 + pow(e->rayDirY / e->rayDirX, 2));
+	e->deltaDistY = sqrt(1 + pow(e->rayDirX / e->rayDirY, 2));
 }
 
 static void step(t_env *e)
@@ -32,22 +34,22 @@ static void step(t_env *e)
 	if (e->rayDirX < 0)
 	{
 		e->stepX = -1;
-		e->sideDistX = (e->rayPosX - e->mapx) * e->deltaDistX;
+		e->sideDistX = (e->rayPosX - (double)e->mapx) * e->deltaDistX;
 	}
 	else
 	{
 		e->stepX = 1;
-		e->sideDistX = (e->mapx + 1.0 - e->rayPosX) * e->deltaDistX;
+		e->sideDistX = ((double)e->mapx + 1.0 - e->rayPosX) * e->deltaDistX;
 	}
 	if (e->rayDirY < 0)
 	{
 		e->stepY = -1;
-		e->sideDistY = (e->rayPosY - e->mapy) * e->deltaDistY;
+		e->sideDistY = (e->rayPosY - (double)e->mapy) * e->deltaDistY;
 	}
 	else
 	{
 		e->stepY = 1;
-		e->sideDistY = (e->mapy + 1.0 - e->rayPosY) * e->deltaDistY;
+		e->sideDistY = ((double)e->mapy + 1.0 - e->rayPosY) * e->deltaDistY;
 	}
 }
 
@@ -67,7 +69,7 @@ static void dda(t_env *e)
 			e->mapy += e->stepY;
 			e->side = 1;
 		}
-		e->hit = (e->map[e->mapx][e->mapy] > 0) ? 1 : 0;
+		e->hit = (e->map[e->mapx][e->mapy] == '1') ? 1 : 0;
 	}
 	e->perpWallDist = (e->side == 0) ?
 	(e->mapx - e->rayPosX + (1 - e->stepX) / 2) / e->rayDirX :

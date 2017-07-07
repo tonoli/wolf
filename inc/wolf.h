@@ -64,15 +64,17 @@ typedef struct		s_env
 	double	deltaDistY;
 	double	perpWallDist;
 
-	int		stepX;
-	int		stepY;
+	int			stepX;
+	int			stepY;
 
-	int		hit;
-	int		side;
+	int			hit;
+	int			side;
 
-	int		lineHeight;
-	int		draw_start;
-	int		draw_end;
+	int			lineHeight;
+	int			draw_start;
+	int			draw_end;
+
+	double	wh;
 }					t_env;
 
 int		ft_error(int i);
