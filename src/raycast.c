@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 03:10:27 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/06 22:05:03 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/06 22:35:30 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void compute(t_env *e)
 	e->rayDirY = e->me_diry + e->planeY * e->cameraX;
 	e->mapx = (int)e->rayPosX;
 	e->mapy = (int)e->rayPosY;
+	e->perpWallDist = 0.9;
 	e->deltaDistX = sqrt(1 + (e->rayDirY * e->rayDirY) / (e->rayDirX * e->rayDirX));
 	e->deltaDistY = sqrt(1 + (e->rayDirX * e->rayDirX) / (e->rayDirY * e->rayDirY));
 }
