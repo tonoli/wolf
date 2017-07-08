@@ -6,41 +6,41 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 19:20:59 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/08 01:39:54 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 03:15:17 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/wolf.h"
 
-void where_draw(t_env *e)
+void	where_draw(t_env *e)
 {
-	e->lineHeight = abs((int)(WIN_H / e->perpWallDist));
-	e->draw_start = -e->lineHeight / e->wh + WIN_H / 2;
-	e->draw_end = e->lineHeight / 2 + WIN_H / 2;
-	if(e->draw_start < 0)
+	e->lineheight = abs((int)(WIN_H / e->perpwalldist));
+	e->draw_start = -e->lineheight / e->wh + WIN_H / 2;
+	e->draw_end = e->lineheight / 2 + WIN_H / 2;
+	if (e->draw_start < 0)
 		e->draw_start = 0;
-	if(e->draw_end >= WIN_H)
+	if (e->draw_end >= WIN_H)
 		e->draw_end = WIN_H - 1;
 }
 
-int draw_wall(t_env *e)
+int		draw_wall(t_env *e)
 {
 	int color;
 
-	if (e->side == 0 && e->rayDirX >= 0)
+	if (e->side == 0 && e->raydirx >= 0)
 		color = GREY;
-	else if (e->side == 0 && e->rayDirX < 0)
+	else if (e->side == 0 && e->raydirx < 0)
 		color = RED;
-	else if (e->side == 1 && e->rayDirY >= 0)
+	else if (e->side == 1 && e->raydiry >= 0)
 		color = ORANGE;
 	else
-	 	color = GREEN;
+		color = GREEN;
 	if (e->side == 1)
 		color = color / 2;
 	return (color);
 }
 
-void draw_line(t_env *e)
+void	draw_line(t_env *e)
 {
 	int y;
 	int color;

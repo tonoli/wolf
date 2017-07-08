@@ -6,17 +6,11 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:17:50 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/08 02:17:12 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 02:39:50 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/wolf.h"
-
-static void wolf(t_env *e)
-{
-	raycast(e);
-	fill_img(e);
-}
 
 int		main(int ac, char **av)
 {
@@ -28,7 +22,8 @@ int		main(int ac, char **av)
 		return (ft_error(0));
 	init(e);
 	parse(av[1], e);
-	wolf(e);
+	raycast(e);
+	fill_img(e);
 	mlx_hook(e->win, 17, (1L << 17), kill_program, e);
 	mlx_hook(e->win, 2, (1L << 0), key_hook, e);
 	mlx_key_hook(e->win, key_hook, e);

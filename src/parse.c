@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 02:00:43 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/07 18:43:47 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 03:02:22 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ static int		get_size(char *path, t_env *e)
 	return (0);
 }
 
-static void get_values(char *path, t_env *e)
+static void		get_values(char *path, t_env *e)
 {
-	int     fd;
+	int		fd;
 	int		x;
 	int		y;
-	char    *line;
+	char	*line;
 	char	**tab;
 
 	if ((fd = open(path, O_RDONLY)) == -1)
@@ -56,7 +56,7 @@ static void get_values(char *path, t_env *e)
 	free(tab);
 }
 
-void parse(char *path, t_env *e)
+void			parse(char *path, t_env *e)
 {
 	if (get_size(path, e))
 		ft_error(2);

@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:18:31 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/07 23:25:55 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 03:13:03 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "../minilibx/mlx.h"
 # include "macros.h"
 
-typedef struct		s_env
+typedef struct	s_env
 {
 	void	*mlx;
 	void	*win;
@@ -43,45 +43,45 @@ typedef struct		s_env
 
 	double	speed;
 
-	double	planeX;
-	double	planeY;
+	double	planex;
+	double	planey;
 
 	int		x;
 	int		y;
 
-	double	cameraX;
-	double	rayPosX;
-	double	rayPosY;
-	double	rayDirX;
-	double	rayDirY;
+	double	camerax;
+	double	rayposx;
+	double	rayposy;
+	double	raydirx;
+	double	raydiry;
 
-	double	sideDistX;
-	double	sideDistY;
-	double	deltaDistX;
-	double	deltaDistY;
-	double	perpWallDist;
+	double	sidedistx;
+	double	sidedisty;
+	double	deltadistx;
+	double	deltadisty;
+	double	perpwalldist;
 
-	int		stepX;
-	int		stepY;
+	int		stepx;
+	int		stepy;
 
 	int		hit;
 	int		side;
 
-	int		lineHeight;
+	int		lineheight;
 	int		draw_start;
 	int		draw_end;
 
 	double	wh;
-}					t_env;
+}				t_env;
 
-int		ft_error(int i);
-int		kill_program(void);
-void	init(t_env *e);
-int		mouse_hook(int button, int x, int y, t_env *e);
-int		key_hook(int key, t_env *env);
-int		mouse_move(int x, int y, t_env *e);
-void	parse(char *path, t_env *e);
-void	raycast(t_env *e);
-void	fill_img(t_env *e);
+int				ft_error(int i);
+int				kill_program(void);
+void			init(t_env *e);
+int				mouse_hook(int button, int x, int y, t_env *e);
+int				key_hook(int key, t_env *env);
+int				mouse_move(int x, int y, t_env *e);
+void			parse(char *path, t_env *e);
+void			raycast(t_env *e);
+void			fill_img(t_env *e);
 
 #endif

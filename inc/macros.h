@@ -6,14 +6,14 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 22:27:43 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/08 02:22:36 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 02:39:21 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MACROS_H
 # define MACROS_H
 
-# define WIN_NAME	"Wolf - Tout Pourri"
+# define WIN_NAME	"Wolf - Beta"
 # define WIN_W		1280
 # define WIN_H		720
 # define MENU_W		60
