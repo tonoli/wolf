@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 23:27:55 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/05 22:29:44 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/07 19:17:33 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ static void init_val(t_env *e) {
 	e->mapy = 0;
 	e->planeX = 0;
 	e->planeY = 0.66;
-	e->x = 0;
-	e->time = 0;
-	e->oldTime = 0;
 	e->speed = 1;
 	e->wh = 4;
 }

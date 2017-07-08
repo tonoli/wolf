@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 02:00:43 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/05 22:19:34 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/07 18:43:47 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,6 @@ void parse(char *path, t_env *e)
 		ft_error(2);
 	e->map = ft_memctab(e->mapy, e->mapx);
 	get_values(path, e);
+	e->mapy = 0;
+	e->mapx = 0;
 }

@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:18:31 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/05 22:21:02 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/07 19:17:41 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,6 @@ typedef struct		s_env
 
 	double	x;
 	double	y;
-
-	double	time;
-	double	oldTime;
 
 	double	cameraX;
 	double	rayPosX;

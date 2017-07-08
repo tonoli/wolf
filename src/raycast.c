@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 03:10:27 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/06 22:35:30 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/07 18:40:14 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void compute(t_env *e)
 {
-	//calculate ray position and direction
 	e->cameraX = 2 * e->x / (double)WIN_W - 1;
 	e->side = 0;
 	e->side = 0;
