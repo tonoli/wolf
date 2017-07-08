@@ -6,15 +6,15 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 23:27:55 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/07 23:24:25 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 02:04:06 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/wolf.h"
 
 static void init_val(t_env *e) {
-	e->me_x = 10;
-	e->me_y = 4;
+	e->me_x = 2;
+	e->me_y = 2;
 	e->me_dirx = -1;
 	e->me_diry = 0;
 	e->mapx = 0;
