@@ -6,12 +6,11 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 19:20:59 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/07 19:11:55 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 01:39:54 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/wolf.h"
-#include <stdio.h>
 
 void where_draw(t_env *e)
 {
@@ -58,7 +57,7 @@ void draw_line(t_env *e)
 			if (e->hit == 1)
 				color = draw_wall(e);
 		}
-		mlx_put_pixel(e->img, e->x, y, color);
+		e->img_data[y * WIN_W + e->x] = color;
 	}
 }
 
@@ -71,5 +70,5 @@ void	fill_img(t_env *e)
 		where_draw(e);
 		draw_line(e);
 	}
-	mlx_put_img_to_win(e->mlx, e->win, e->img, 0, 0);
+	mlx_put_image_to_window(e->mlx, e->win, e->img, 0, 0);
 }

@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/27 15:01:51 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/05 22:29:45 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 01:45:05 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,15 @@ static void motion(t_env *e,int key)
 	}
 	else if (key == LEFT || key == RIGHT)
 		rotation(e, key);
+	fill_img(e);
 }
 
-int			key_hook(int key, t_env *env)
+int			key_hook(int key, t_env *e)
 {
 	if (key == ESC_KEY)
 		kill_program();
 	else if (key == UP || key == DOWN || key == LEFT || key == RIGHT)
-		motion(env, key);
+		motion(e, key);
 	return (0);
 }
 

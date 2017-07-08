@@ -6,7 +6,7 @@
 #    By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/26 17:44:42 by itonoli-          #+#    #+#              #
-#    Updated: 2017/07/05 22:21:54 by itonoli-         ###   ########.fr        #
+#    Updated: 2017/07/07 21:49:18 by itonoli-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ $(OBJ_PATH)%.o:$(SRC_PATH)%.c
 		@ mkdir -p $(OBJ_PATH)
 		@ $(CC) $(FLAGS) -o $@ -c $<
 
-rtv1_only:
+wolf_only:
 		@ $(CC) $(FLAGS) -I libft/ -I./minilibx/ -c $(SRC)
 		@ $(CC) $(FLAGS) -g -o $(NAME) $(OBJ) $(LIBFT) $(MLX)
 		@ echo "$(GREEN)Compilation done : Wold3D is ready to be used$(END)"

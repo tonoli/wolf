@@ -1,68 +1,22 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/07/02 23:04:59 by itonoli-          #+#    #+#              #
-#    Updated: 2017/07/02 23:06:26 by itonoli-         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+#
+#
 
-C = clang
+NOM=libmlx.a
+SRC= mlx_shaders.c mlx_new_window.m mlx_init_loop.m mlx_new_image.m mlx_xpm.c mlx_int_str_to_wordtab.c
+OBJ1=$(SRC:.c=.o)
+OBJ=$(OBJ1:.m=.o)
+CFLAGS+=-O2
 
-NAME = libmlx.a
+all: $(NOM)
 
-FLAGS = -O3 -msse4
-
-DIR_S = sources
-
-DIR_OC = temporary_c
-
-DIR_OM = temporary_m
-
-HEADERS = includes
-
-SOURCES_C = mlx_shaders.c \
-			mlx_xpm.c \
-			mlx_int_str_to_wordtab.c
-
-SOURCES_M = mlx_new_window.m \
-			mlx_init_loop.m \
-			mlx_new_image.m
-
-SRCS_C = $(addprefix $(DIR_S)/,$(SOURCES_C))
-
-SRCS_M = $(addprefix $(DIR_S)/,$(SOURCES_M))
-
-OBJS_C = $(addprefix $(DIR_OC)/,$(SOURCES_C:.c=.o))
-
-OBJS_M = $(addprefix $(DIR_OM)/,$(SOURCES_M:.m=.o))
-
-all: temporary $(NAME)
-
-$(NAME): $(OBJS_C) $(OBJS_M)
-	@ar rc $(NAME) $(OBJS_C) $(OBJS_M)
-	@ranlib $(NAME)
-
-temporary:
-	@mkdir -p temporary_c
-	@mkdir -p temporary_m
-
-$(DIR_OC)/%.o: $(DIR_S)/%.c
-	@$(CC) $(FLAGS) -I $(HEADERS) -o $@ -c $<
-
-$(DIR_OM)/%.o: $(DIR_S)/%.m
-	@$(CC) $(FLAGS) -I $(HEADERS) -o $@ -c $<
+$(NOM):	$(OBJ)
+	ar -r $(NOM) $(OBJ)
+	ranlib $(NOM)
 
 clean:
-	@rm -f $(OBJS_C) $(OBJS_M)
-	@rm -rf $(DIR_OC) $(DIR_OM)
-
+	rm -f $(OBJ) 
+	rm -f mlx_app
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NOM) 
 
-re: fclean all
-
-.PHONY: all, temporary, clean, fclean, re
+re: clean all

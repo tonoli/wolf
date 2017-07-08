@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:18:31 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/07 19:17:41 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/07 23:25:55 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define WOLF_H
 
 # include "../libft/inc/libft.h"
-# include "../minilibx/includes/mlx.h"
+# include "../minilibx/mlx.h"
 # include "macros.h"
 
 typedef struct		s_env
@@ -46,8 +46,8 @@ typedef struct		s_env
 	double	planeX;
 	double	planeY;
 
-	double	x;
-	double	y;
+	int		x;
+	int		y;
 
 	double	cameraX;
 	double	rayPosX;
@@ -61,15 +61,15 @@ typedef struct		s_env
 	double	deltaDistY;
 	double	perpWallDist;
 
-	int			stepX;
-	int			stepY;
+	int		stepX;
+	int		stepY;
 
-	int			hit;
-	int			side;
+	int		hit;
+	int		side;
 
-	int			lineHeight;
-	int			draw_start;
-	int			draw_end;
+	int		lineHeight;
+	int		draw_start;
+	int		draw_end;
 
 	double	wh;
 }					t_env;
