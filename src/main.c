@@ -28,6 +28,9 @@ int		main(int ac, char **av)
 		return (ft_error(0));
 	init(e);
 	parse(av[1], e);
+	int i = 0;
+	while(i < 10)
+		ft_putendl(e->map[i++]);
 	wolf(e);
 	mlx_hook(e->win, 6, (1L << 6), mouse_move, e);
 	mlx_hook(e->win, 17, (1L << 17), kill_program, e);

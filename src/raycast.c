@@ -24,7 +24,6 @@ static void compute(t_env *e)
 	e->rayDirY = e->me_diry + e->planeY * e->cameraX;
 	e->mapx = (int)e->rayPosX;
 	e->mapy = (int)e->rayPosY;
-	e->perpWallDist = 0.9;
 	e->deltaDistX = sqrt(1 + pow(e->rayDirY / e->rayDirX, 2));
 	e->deltaDistY = sqrt(1 + pow(e->rayDirX / e->rayDirY, 2));
 }
@@ -72,8 +71,10 @@ static void dda(t_env *e)
 		e->hit = (e->map[e->mapx][e->mapy] == '1') ? 1 : 0;
 	}
 	e->perpWallDist = (e->side == 0) ?
-	(e->mapx - e->rayPosX + (1 - e->stepX) / 2) / e->rayDirX :
-	(e->mapy - e->rayPosY + (1 - e->stepY) / 2) / e->rayDirY;
+	fabs((e->mapx - e->rayPosX + (1 - e->stepX) / 2) / e->rayDirX) :
+	fabs((e->mapy - e->rayPosY + (1 - e->stepY) / 2) / e->rayDirY);
+	if (e->perpWallDist <= 0.05)
+		e->perpWallDist = 0.05;
 }
 
 void raycast(t_env *e)

@@ -42,13 +42,13 @@ void draw_lines(t_env *e)
 	{
 		if (y < e->draw_start)
 			mlx_put_pixel(e->img, e->x, y, SKY);
-		else if (e->draw_start <= y && y <= e->draw_end)
+		else if (y > e->draw_end)
+			mlx_put_pixel(e->img, e->x, y, BROWN);
+		else
 		{
 			if (e->hit == 1)
 				draw_wall(e, y);
 		}
-		else if (y > e->draw_end)
-			mlx_put_pixel(e->img, e->x, y, BROWN);
 	}
 }
 

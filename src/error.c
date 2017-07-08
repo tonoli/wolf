@@ -29,6 +29,6 @@ int		ft_error(int i)
 	else if (i == 3)
 		ft_puterror("error: The map can't be read");
 	else if (i == 4)
-		ft_puterror(ft_strjoin("error:", strerror(errno)));
+		ft_puterror(ft_strjoin("error: ", strerror(errno)));
 	return (0);
 }
