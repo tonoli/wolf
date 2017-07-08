@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 02:00:43 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/08 03:02:22 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 05:46:06 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static int		get_size(char *path, t_env *e)
 {
 	int		fd;
 	int		i;
+	int		x;
 	char	*line;
 	char	**tab;
 
@@ -23,13 +24,17 @@ static int		get_size(char *path, t_env *e)
 		ft_error(4);
 	while (get_next_line(fd, &line) > 0)
 	{
+		x = -1;
 		tab = ft_strsplit(line, ' ');
 		i = ft_tablen(tab);
 		(i > e->mapy++ && e->mapx == 0) ? e->mapx = i : 0;
 		if (i != e->mapx)
 			return (1);
+		while (++x < e->mapx)
+			free(tab[x]);
+		free(tab);
+		free(line);
 	}
-	free(tab);
 	((close(fd)) == -1) ? ft_error(4) : 0;
 	return (0);
 }
@@ -51,9 +56,14 @@ static void		get_values(char *path, t_env *e)
 		tab = ft_strsplit(line, ' ');
 		x = -1;
 		while (++x < e->mapx)
+		{
 			e->map[y][x] = tab[x][0];
+			free(tab[x]);
+		}
+		free(tab);
+		free(line);
 	}
-	free(tab);
+	((close(fd)) == -1) ? ft_error(4) : 0;
 }
 
 void			parse(char *path, t_env *e)

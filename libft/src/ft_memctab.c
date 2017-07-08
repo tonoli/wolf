@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 02:04:13 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/04 02:26:32 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 05:11:07 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char **ft_memctab(int lines, int col)
 	int j;
 	char **tab;
 
+	tab = NULL;
 	if (!(tab = malloc(sizeof(char *) * lines)))
 		ft_puterror("error: Dynamic memory allocation failed.");
 	i = -1;

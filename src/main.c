@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:17:50 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/08 02:39:50 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 04:37:55 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int		main(int ac, char **av)
 	fill_img(e);
 	mlx_hook(e->win, 17, (1L << 17), kill_program, e);
 	mlx_hook(e->win, 2, (1L << 0), key_hook, e);
-	mlx_key_hook(e->win, key_hook, e);
 	mlx_loop(e->mlx);
+	mlx_destroy_window(e->mlx, e->win);
 }
