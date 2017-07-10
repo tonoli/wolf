@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 02:00:43 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/08 05:46:06 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 17:13:02 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int		get_size(char *path, t_env *e)
 
 	if ((fd = open(path, O_RDONLY)) == -1)
 		ft_error(4);
-	while (get_next_line(fd, &line) > 0)
+	while ((i = get_next_line(fd, &line)) > 0)
 	{
 		x = -1;
 		tab = ft_strsplit(line, ' ');

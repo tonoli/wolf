@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 19:20:59 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/08 03:15:17 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 15:51:58 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,13 @@ int		draw_wall(t_env *e)
 	int color;
 
 	if (e->side == 0 && e->raydirx >= 0)
-		color = GREY;
+		color = MURA;
 	else if (e->side == 0 && e->raydirx < 0)
-		color = RED;
+		color = MURB;
 	else if (e->side == 1 && e->raydiry >= 0)
-		color = ORANGE;
+		color = MURC;
 	else
-		color = GREEN;
-	if (e->side == 1)
-		color = color / 2;
+		color = MURD;
 	return (color);
 }
 

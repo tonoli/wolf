@@ -6,7 +6,7 @@
 #    By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/26 17:44:42 by itonoli-          #+#    #+#              #
-#    Updated: 2017/07/08 04:07:24 by itonoli-         ###   ########.fr        #
+#    Updated: 2017/07/08 14:52:32 by itonoli-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ $(NAME):$(OBJ)
 		@ make -C libft/
 		@ make -C minilibx/
 		@ $(CC) $(FLAGS) $(LIBFT) $(MLX) $^ -o $@
-		@ echo "$(GREEN)Compilation done : Wold3D is ready to be used$(END)"
+		@ echo "$(GREEN)Compilation done : Wolf3D is ready to be used$(END)"
 
 $(OBJ_PATH)%.o:$(SRC_PATH)%.c
 		@ mkdir -p $(OBJ_PATH)
@@ -66,7 +66,7 @@ $(OBJ_PATH)%.o:$(SRC_PATH)%.c
 wolf_only:
 		@ $(CC) $(FLAGS) -I libft/ -I./minilibx/ -c $(SRC)
 		@ $(CC) $(FLAGS) -g -o $(NAME) $(OBJ) $(LIBFT) $(MLX)
-		@ echo "$(GREEN)Compilation done : Wold3D is ready to be used$(END)"
+		@ echo "$(GREEN)Compilation done : Wolf3D is ready to be used$(END)"
 
 clean:
 		@ echo "$(YELLOW)Cleaning the following files: $(END)"

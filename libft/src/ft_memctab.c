@@ -6,13 +6,13 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 02:04:13 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/08 05:55:19 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 05:51:24 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-char **		ft_memctab(int lines, int col)
+char	**ft_memctab(int lines, int col)
 {
 	int		i;
 	int		j;

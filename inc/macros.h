@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 22:27:43 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/07/08 02:39:21 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/08 15:56:37 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,9 @@
 # define GREY		0x757575
 # define BROWN		0x795548
 # define BLACK		0x000000
+# define MURA		0x26a69a
+# define MURB		0x00796b
+# define MURC		0x88A3AD
+# define MURD		0x77878F
 
 #endif
