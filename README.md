@@ -4,7 +4,7 @@ This is a very basic raycasting program I implemented. For now it's not even bet
 
 If still you want to play arround with it here the installation process
 
-* Install
+### Install
 
 Download/clone this repo:
 
